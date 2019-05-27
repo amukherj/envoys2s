@@ -1,0 +1,7 @@
+FROM envoyproxy/envoy:latest
+
+LABEL maintainer="arindam.mukerjee@gmail.com"
+RUN mkdir -p /etc/edgesvc /var/log/envoy
+COPY ./samples/config/envoy-edge.yaml /etc/edgesvc/envoy-edge.yaml
+EXPOSE 8800
+CMD /usr/local/bin/envoy -c /etc/edgesvc/envoy-edge.yaml

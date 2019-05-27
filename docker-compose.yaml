@@ -1,0 +1,26 @@
+version: "2"
+services:
+
+  moods:
+    image: moods-img:latest
+    expose:
+      - "8800"
+
+  rockers:
+    image: rockers-img:latest
+    expose:
+      - "8800"
+
+  frontsvc:
+    image: frontsvc-img:latest
+    volumes:
+      - ./samples/config/envoy.yaml:/etc/frontsvc/envoy.yaml
+    expose:
+      - "8800"
+
+  edgesvc:
+    image: edgesvc-img:latest
+    volumes:
+      - ./samples/config/envoy-front.yaml:/etc/edgesvc/envoy-front.yaml
+    expose:
+      - "8800"

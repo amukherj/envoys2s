@@ -1,0 +1,9 @@
+FROM envoyproxy/envoy:latest
+
+LABEL maintainer="arindam.mukerjee@gmail.com"
+RUN mkdir -p /etc/frontsvc /var/log/envoy
+COPY ./samples/config/envoy.yaml /etc/frontsvc
+COPY ./bin/frontsvc /usr/local/bin/frontsvc
+COPY ./samples/scripts/start.sh /etc/frontsvc/start
+EXPOSE 8800
+CMD /etc/frontsvc/start frontsvc 8800 /etc/frontsvc/envoy.yaml

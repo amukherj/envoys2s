@@ -1,0 +1,10 @@
+FROM alpine:3.9.2
+
+LABEL maintainer="arindam.mukerjee@gmail.com"
+RUN apk add ca-certificates && update-ca-certificates
+RUN mkdir -p /etc/moods
+COPY ./samples/data/moods.lst /etc/moods
+# cp -rfp ./samples/config/ingress.yaml /etc/moods
+COPY ./bin/randlst /usr/local/bin/randlst
+EXPOSE 8800
+CMD randlst --list /etc/moods/moods.lst --port 8800

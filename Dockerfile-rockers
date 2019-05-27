@@ -1,0 +1,10 @@
+FROM alpine:3.9.2
+
+LABEL maintainer="arindam.mukerjee@gmail.com"
+RUN apk add ca-certificates && update-ca-certificates
+RUN mkdir -p /etc/rockers
+COPY ./samples/data/rockers.lst /etc/rockers
+# cp -rfp ./samples/config/ingress.yaml /etc/rockers
+COPY ./bin/randlst /usr/local/bin/randlst
+EXPOSE 8800
+CMD randlst --list /etc/rockers/rockers.lst --port 8800
