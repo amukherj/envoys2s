@@ -9,8 +9,8 @@ import (
 	"os"
 	"time"
 
-	"envoys2s/internal/httpipe"
-	"envoys2s/internal/server"
+	"github.com/amukherj/envoys2s/internal/httpipe"
+	"github.com/amukherj/envoys2s/internal/server"
 )
 
 var (

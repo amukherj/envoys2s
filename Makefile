@@ -1,4 +1,4 @@
-GIT_REPO=envoys2s
+GIT_REPO=github.com/amukherj/envoys2s
 CONTAINER_IMGS=rockers-img moods-img frontsvc-img edgesvc-img
 
 all: bin/randlst bin/frontsvc $(CONTAINER_IMGS)

@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"envoys2s/internal/rand"
-	"envoys2s/internal/server"
+	"github.com/amukherj/envoys2s/internal/rand"
+	"github.com/amukherj/envoys2s/internal/server"
 )
 
 const (
